@@ -38,8 +38,8 @@ def decryptText(textInput, key):
 
                 # If the next substring is not divisible by the key.
                 # This is to prevent dividing too early when a number has many zeros, and is therefore divisible by the key when not completely selected.
-                # The or condition is the prevent cutting off the last digit because there is no i + 1 char (because the end has been reached).
-                if int(textInput[start:(i + 1)]) % key != 0 or i == (textInputLength - 1):
+                # The second condition will make sure that the last digit makes it through (because there is no i + 1 when it's the last char).
+                if int(textInput[start:(i + 1)]) % key != 0 or i >= textInputLength:
                 
                     # Divide the text input sub by the key to get the ascii number.
                     currentAscii = textInputSubInt / key
@@ -61,7 +61,7 @@ def decryptText(textInput, key):
                     print(start)
                     print("The i variable is ")
                     print(i)
-        
+
         except:
             print("An error has occurred at the try block in the encryptText function.")
 

@@ -7,7 +7,7 @@
 #      Zeros cannot be at the beginning of number, take that into account.
 
 import keyCreation
-import graphics
+#import graphics
 
 def launchMainMenu():
 
